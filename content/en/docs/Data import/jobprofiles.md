@@ -1,9 +1,8 @@
 ---
 title: "Job profiles"
 linkTitle: "Job profiles"
-weight: 10
-tags: ["subtopic"]
-aliases: ['/docs/metadata/additional-topics/job-profiles/jobprofiles/']
+weight: 50
+aliases: ['/docs/metadata/additional-topics/', '/docs/metadata/additional-topics/job-profiles/', '/docs/metadata/additional-topics/job-profiles/jobprofiles/', '/docs/metadata/additional-topics/jobprofiles/']
 ---
 # How to create job profiles
 
@@ -83,4 +82,4 @@ All sub-profiles must be created before creating a job profile.
 * Make descriptions detailed (e.g., "Matches on holdings HRID in `960$f`; updates holdings electronic access from `960$c`; Used for transfer workflow")
 * You can edit existing job profiles, but you **cannot reorder sub-profiles** - sub-profiles can only be added or removed
 
-**For steps to create a job profile see [Settings documentation](content/en/docs/Settings/Settings_data_import/settings_data_import.md)**
+**For steps to create a job profile see [Settings documentation](../../settings/settings_data_import/settings_data_import/)**

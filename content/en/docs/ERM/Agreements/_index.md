@@ -25,10 +25,9 @@ Library’s utilizing FOLIO can employ an external knowledge base, like EBSCO, o
 The permissions listed below allow you to interact with the Agreements app and determine what you can or cannot do within the app. You can assign permissions to users in the Users app. If none of these permissions are assigned to a user, they are unable to see the Agreements app or any related information.
 
 
+## Permissions
 
 The following permissions are applicable to all libraries using the Agreements app:
-
-
 
 *   **Agreements: Search & view agreements.** This permission allows the user to search and view existing agreements. It also allows the user to see and access the Agreement app in the FOLIO interface.
 *   **Agreements: Edit agreements.** This permission allows the user to edit agreements, including the ability to add and edit agreement lines; to add and edit documents; and to view, add and edit tags on an agreement. It also grants all permissions included in "Agreements: Search & view agreements.”
@@ -37,8 +36,6 @@ The following permissions are applicable to all libraries using the Agreements a
 
 The following permissions are only applicable if your library is using the internal KB:
 
-
-
 *   **Agreements: Search & view e-resources.** This permission allows the user to search and view e-resources (packages and titles in those packages) in the internal KB. This includes the permission to see and access the Agreements app in the FOLIO interface.
 *   **Agreements: Edit e-resources.** This permission allows the user to edit the e-resources. It also grants all permissions included in "Agreements: Search & view e-resources."
 *   **Agreements: Search & view platforms.** This permission allows the user to search and view platforms in the internal KB. This includes the permission to see and access the Agreement app in the FOLIO interface.
@@ -46,11 +43,10 @@ The following permissions are only applicable if your library is using the inter
 
 If you want eUsage data in an agreement record, you also need to have the following eUsage permission:
 
-
-
 *   **eUsage reports: charts may be viewed.** This permission adds an accordion to the Agreement record in the Agreement app that displays charts and graphs of eUsage data for the titles related to an agreement.
 
 
+### Capability sets for Agreements
 
 The Capability sets listed below allow you to interact with the Agreements app and determine what you can or cannot do within the app. You can assign Capability sets to users in the section **Authorization roles** of the Settings app. 
 
@@ -65,6 +61,52 @@ The Capability sets listed below allow you to interact with the Agreements app a
 |Agreements: Search & view platforms  |UI-Agreements Platforms (ui-agreements.platforms.view)          |data      |app-platform-complete-2.5.3|view   |
 |Agreements: Edit platforms           |UI-Agreements Platforms (ui-agreements.platforms.edit)          |data      |app-platform-complete-2.5.3|edit   |
 |eUsage reports: charts may be viewed |Plugin-Eusage-Reports Charts (plugin-eusage-reports.view-charts)|data      |app-erm-usage-2.0.4        |view   |
+
+
+### Capability sets for eUsage Reports (Plugin)
+
+|Type      |Resource                           |Action   |Description                                                                                     |
+|:---------|:----------------------------------|:--------|:-----------------------------------------------------------------------------------------------|
+|Data      |Eusage-Reports                     | View    | All read only permissions                                                                      |
+|Data      |Eusage-Reports                     | Manage  | All permissions                                                                                |
+|Data      |Plugin-Eusage-Reports Charts       | View    | eUsage reports: charts may be viewed                                                           |
+|Data      |Plugin-Eusage-Reports Matches      | Edit    | eUsage reports: title matches may be viewed and edited                                         |
+|Data      |UI-Erm-Comparisons Jobs            | View    | A user with this permission can search and view  </br>ERM Comparison "jobs" which are used to compare </br>lists of resources in the Agreements local knowledgebase. </br> This includes the permission to see and access the </br>ERM Comparisons app in the Folio interface.|
+|Data      |UI-Erm-Comparisons Jobs            | Edit    | Grants all permissions in "ERM comparisons: View jobs" </br>plus the ability to create new jobs (i.e. compare </br>two lists of resources in the Agreements local </br>knowledgebase)                                                                                            |
+|Data      |UI-Erm-Comparisons Jobs            | Delete  | Grants all permissions in "ERM comparisons: View jobs" </br>plus the ability to delete jobs that have already run|
+|Settings  |Settings Erm-Comparisons Enabled   | View    | Settings (ERM comparisons): display list of settings pages                                     |
+
+Please note: 
+* To activate the plugin in Agreements in the UI, you must set the **Plugin-Eusage-Reports Charts** capability set.
+* To activate the comparison module in eUsage in the UI, you must set the **UI-Erm-Comparisons Jobs** capability set.
+
+
+### Capabilities for eUsage Reports (Plugin)
+
+|Type      |Resource                                  |Action   |Description                                             |
+|:---------|:-----------------------------------------|:--------|:-------------------------------------------------------|
+|Data      |Eusage-Reports                            | View    | All read only permissions                              |
+|Data      |Eusage-Reports                            | Manage  | All permissions                                        |
+|Data      |Eusage-Reports-Report-Cost-Per-Use        | View    | Get eUsage report for cost per use                     |
+|Data      |Eusage-Reports-Report-Data Collection     | View    | Get report data                                        |
+|Data      |Eusage-Reports-Report-Packages Collection | View    | Get report packages                                    |
+|Data      |Eusage-Reports-Report-Reqs-By-Date-Of-Use | View    | Get eUsage report for requests by date of use          |
+|Data      |Eusage-Reports-Report-Reqs-By-Pub-Year    | View    | Get eUsage report for requests by publication year     |
+|Data      |Eusage-Reports-Report-Status              | View    | Get eUsage report metadata (like lastUpdated)          |
+|Data      |Eusage-Reports-Report-Titles Collection   | View    | Get Counter report titles                              |
+|Data      |Eusage-Reports-Report-Use-Over-Time       | View    | Get eUsage report for use over time                    |
+|Data      |Eusage-Reports-Title-Data Collection      | View    | Get title data                                         |
+|Data      |Plugin-Eusage-Reports Charts              | View    | eUsage reports: charts may be viewed                   |
+|Data      |Plugin-Eusage-Reports Matches             | Edit    | eUsage reports: title matches may be viewed and edited |
+|Data      |UI-Erm-Comparisons Jobs                   | View    | A user with this permission can search and view  </br>ERM Comparison "jobs" which are used to compare </br>lists of resources in the Agreements local knowledgebase. </br> This includes the permission to see and access the </br>ERM Comparisons app in the Folio interface.|
+|Data      |UI-Erm-Comparisons Jobs                   | Edit    | Grants all permissions in "ERM comparisons: View jobs" </br>plus the ability to create new jobs (i.e. compare </br>two lists of resources in the Agreements local </br>knowledgebase)|
+|Data      |UI-Erm-Comparisons Jobs                   | Delete  | Grants all permissions in "ERM comparisons: View jobs" </br>plus the ability to delete jobs that have already run|
+|Settings  |Module Erm-Comparisons Enabled            | View    | UI: ui-erm-comparisons module is enabled               |
+|Settings  |Module Ui-Plugin-Eusage-Reports Enabled   | View    | UI: eusage-reports plugin is enabled                   |
+|Settings  |Settings Erm-Comparisons Enabled          | View    | Settings (ERM comparisons): display list of settings pages|
+|Procedural|Eusage-Reports-Report-Data-From-Agreement | Execute | Parse agreement lines and populate report data         |
+|Procedural|Eusage-Reports-Report-Titles Collection   | Execute | Post Counter report titles                             |
+|Procedural|Eusage-Reports-Report-Titles-From-Counter | Execute | Parse counter reports and return them                  |
 
 
 ## Keyboard shortcuts
@@ -173,6 +215,23 @@ When adding agreement periods, you should consider the following:
 2. Click the **trash can icon**. The Agreement period is deleted and is removed from the record once you save the agreement.
 
 
+
+### Aquisition units
+
+Acquisition units are an additional layer you can add to acquisition records that restrict a user’s ability to interact with those records unless they have been assigned to that unit. For example, you may create acquisition units to represent the different libraries within your library system. Units are defined and determined by your library in the Settings app. See [Settings > Acquisition units](../../settings/settings_acquisition_units/settings_acquisition_units/) for more information.
+
+If you want the agreement to be available to particular users within certain acquisition units, enter or select the Acquisition units from the drop-down list. You can select multiple units. 
+
+Agreement lines inherit the acquisition units from their parent agreement (i.e. you cannot assign an acquisition unit directly to an agreement line, only to the agreement). 
+
+
+
+### Agreement lines
+
+An agreement line represents the material covered by the agreement, for example, a package or title. If you want to add agreement lines, you should save your progress on the agreement record you are creating or wait until you have completed and saved all agreement information before you start the agreement line process. For instructions on adding agreement lines to a record, see [Adding an agreement line](#adding-an-agreement-line).
+
+
+
 ### Internal contacts
 
 Internal contacts are generally the people within your library that you need to contact if you have questions about the agreement. For example, you may want to add the ERM librarian responsible for renewals, the authorized signatory for an agreement, or the subject matter expert responsible for reviewing content ahead of renewals. Multiple contacts can be assigned to a record, but each contact you add must have a user record in the Users app.
@@ -198,10 +257,6 @@ Internal contacts are generally the people within your library that you need to 
 1. Identify the Internal contact you want to remove.
 2. Click the **trash can icon**. The Internal contact is removed from the record once you save the agreement.
 
-
-### Agreement lines
-
-An agreement line represents the material covered by the agreement, for example, a package or title. If you want to add agreement lines, you should save your progress on the agreement record you are creating or wait until you have completed and saved all agreement information before you start the agreement line process. For instructions on adding agreement lines to a record, see [Adding an agreement line](#adding-an-agreement-line).
 
 
 ### License information
@@ -408,6 +463,74 @@ A usage data provider is any organization that provides e-resource usage data to
 3. Repeat steps 3-6 under [Adding a usage data provider](#adding-a-usage-data-provider).
 
 
+## eUsage Reports (Plugin)
+
+### Matching summary
+
+When a new COUNTER report is harvested into the eUsage app, the eUsage Reports module creates matches between the titles in the COUNTER report and the titles that already exist in the Agreements local KB. Matching is done via ISSN or ISBN. If no matching ISSN or ISBN is found in the KB, then the title remains unmatched and can be manually addressed by a user.
+
+Note that matching is only supported for the COUNTER 5 TR report.
+
+The eUsage Reports matching summary can be found in the eUsage app. This accordion appears on each eUsage provider record and provides a summary of the results of the matching process. The matching summary contains the following data:
+* **Date of last harvest.** The date of the last COUNTER TR report harvest for that provider, whether manual or automated.
+* **Status**
+    * Reviewed: All titles have been reviewed and either matched or ignored.
+    * Pending review: Some titles have not yet been matched or ignored.
+    * No records: No counter data has yet been loaded.
+* **Records loaded.** The number of titles found in COUNTER TR reports for the current provider.
+* **Matched.** The number of COUNTER TR titles that have been matched to a KB title.
+* **Unmatched.** The number of COUNTER TR titles that were not matched.
+* **Ignored.** The number of titles have been manually flagged as ignored.
+
+
+#### Working with matches
+
+Clicking the hyperlinked numbers in the matching summary brings up the eUsage titles screen. This screen allows the user to review matched titles, create manual matches, and ignore titles that should not be matched. Each title in the list has an actions menu that provides the following options.
+
+
+##### Editing titles
+
+The edit option allows the user to manually choose a title from the local KB to match to a title found on a COUNTER TR report. Unmatched titles can be edited to select a match for the first time, and matched titles can be edited to change an existing match in case of error.
+
+To edit:
+
+1. Click the menu icon in the **Actions** column and select **Edit**.
+2. Use the modal to search for a title in the local KB.
+3. Click on the desired title to create the match.
+
+Once a match is chosen, it will be used for all future harvests and reports. You will not need to manually rematch an unmatched title every time you load new data. If necessary, you can reset matched titles to unmatched. 
+
+
+##### Ignoring titles
+
+There may be titles included on COUNTER TR reports that appear in error or are not of interest. If you don't want to include these titles in your reports or go through the trouble of matching them, you can ignore them. Ignored titles will not be shown in your matched or unmatched counts or cause a provider to be marked as **pending review**.
+
+To ignore:
+
+1. Click the menu icon in the **Actions** column and select **Ignore**.
+2. Your title will be ignored.
+3. To remove a title from the Ignored list, select the Actions menu and choose **Stop ignoring**.
+
+
+#### Updating matches
+
+The **Update matches** button triggers the eUsage Reports module to process any new COUNTER report data that has become available since the last harvest. If new titles have come in, they will either be matched automatically or added to the unmatched list. 
+
+Note that for new data to be included in the eUsage Reports visualizations, you must update matches before analyzing an agreement or viewing a report.
+
+
+#### Reset matched titles to unmatched
+
+If necessary, you can reset matched titles to unmatched.
+
+To reset:
+
+1. Click the menu icon in the **Actions** column and select **Ignore**.
+2. Your title will be ignored.
+3. Click the menu icon in the **Actions** column and select **Stop ignoring**.
+4. Your title will get the status **unmatched**.
+
+
 ### Related agreements
 
 A related agreement is an agreement relevant to the current agreement. This section allows you to link agreements together to establish relationships among them. For example, you may want to add a post-cancellation agreement here.
@@ -464,6 +587,15 @@ To filter agreements by their status, select one of the following:
 *   **Draft.** An agreement that is in draft form.
 *   **In negotiation.** An agreement that is being negotiated between your library and a provider.
 *   **Requested.** If your library has requested an agreement from a provider.
+
+
+### Acquisition unit
+
+To search for agreements assigned to a specific acquisition unit, follow these steps:
+
+1. In the **Search & filter** pane, click **Acquisition unit**.
+
+2. Select the acquisition unit from the drop-down list. The search results appear in the Agreements pane.
 
 
 ### Reason for closure
@@ -923,6 +1055,15 @@ To filter agreement lines by an agreement record, click **Select agreement**. In
 To filter agreement lines by type, check the **Unlinked**, **External**, and/or **Internal** checkboxes. An **unlinked agreement line** is not linked to a resource in a knowledge base. An **external agreement line** is linked to a resource in an external knowledge base (like the eHoldings app), and an **internal agreement line** is linked to a resource in the internal knowledge base.
 
 
+### Acquisition unit
+
+To search for agreement lines assigned to a specific acquisition unit, follow these steps:
+
+1. In the **Search & filter** pane, click **Acquisition unit**.
+
+2. Select the acquisition unit from the drop-down list. The search results appear in the Agreement lines pane.
+
+
 ### Active from
 
 To filter agreement lines by their active from date, enter a date into the **On or after** and/or **On or before** search box, or click the **calendar icon** to select a date from the calendar. Click **Apply**.
@@ -1045,11 +1186,11 @@ In the Packages pane, click an e-resource package to view it. The e-resource pac
 * Availability: The general availability of the package, for example, Global or Consortium, and any constraints on availability, such as the specific Consortia it is available to.
 * Source created: The date and time the package was created in the external source the package data came from.
 * Source last updated: The date and time the package was last updated in the external source the package data came from.
-* One or more of the following package IDs: ISIL, ZDB, EZB, eBookPool, GOKb ID and GOKb. Note that ID fields will only display when an ID of that type is available for the package in the internal KB.
+* One or more of the following package IDs: ISIL, ZDB, EZB, eBookPool, GOKB ID and GOKB. Note that ID fields will only display when an ID of that type is available for the package in the internal KB.
 
 The following accordions also display:
 
-**Extended package information.** This accordion displays additional metadata for this e-resource package including: a Description of the package; Package description URLs, which are links to descriptions of that package online (for example, in GOKb or on a publishers website); Alternative names for the package; and  all package Identifiers stored (this will include any IDs displayed in the package details but may include additional IDs as well).
+**Extended package information.** This accordion displays additional metadata for this e-resource package including: a Description of the package; Package description URLs, which are links to descriptions of that package online (for example, in GOKB or on a publishers website); Alternative names for the package; and  all package Identifiers stored (this will include any IDs displayed in the package details but may include additional IDs as well).
 
 **Agreements for this package.** This accordion displays agreements that cover this e-resource package. To add an e-resource from the internal KB to an agreement see [Adding an agreement line via the internal KB](#adding-an-agreement-line-via-the-internal-kb).
 
@@ -1134,13 +1275,13 @@ Packages can be further filtered by:
 The values for Status, Scope, Availability, and Content type can be configured in [Settings \> Agreements \> Pick list values](../../settings/settings_agreements/settings_agreements/#settings--agreements--pick-list-values). 
 
 
-#### Synchronizing select package data to Agreements local KB from GOKb
+#### Synchronizing select package data to Agreements local KB from GOKB
 
-When GOKb is setup as an external data source is setup for the Agreements local KB, packages are only fully synchronized if they are needed locally in the FOLIO tenant. 
+When GOKB is setup as an external data source is setup for the Agreements local KB, packages are only fully synchronized if they are needed locally in the FOLIO tenant. 
 
 * All package header information (i.e. the package name, ID, and other key information) is synchronized
 * Each package will be marked in Folio as to be synchronized or not
-* Package content (title lists → in GOKb terms these are TIPPs, in Folio called PCIs) will only be synchronized for those packages marked to synchronize
+* Package content (title lists → in GOKB terms these are TIPPs, in Folio called PCIs) will only be synchronized for those packages marked to synchronize
 
 After searching for and selecting packages covered by an agreement in the local KB, under the **Actions** drop-down menu, select **Start synchronisation of selected packages**. To pause synchronization of the packages, select **Pause synchronisation of selected packages**.
 
@@ -1220,6 +1361,11 @@ In the **Platforms** pane, click a platform to view it. The platform details pan
 1.  In the **platform details** pane under the **Platform URL customization settings** accordion, click on the URL customization.
 2. In the **URL customization** window, click **Actions > Delete**. 
 3. In the **Delete URL customization** dialog box, click **Delete**.
+
+
+## GOKB search
+
+By clicking on the **GOKB search** tab, you can search for titles directly in GOKB (via the GOKB OpenSearch API) without those titles needing to be present in the local KB. Search results display title availability across packages, with options to synchronise related packages to the local KB and to create agreement lines directly from GOKB titles. Where a title already exists in the local KB, the user is directed to the local information including any existing agreements. 
 
 
 ## Adding and removing notes
